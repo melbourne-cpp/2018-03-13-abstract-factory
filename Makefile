@@ -4,22 +4,22 @@ OBJDIR = obj
 
 .PHONY: directories
 
-run: directories $(OBJDIR)/main.o $(OBJDIR)/AustraliaFlag.o $(OBJDIR)/ChileFlag.o $(OBJDIR)/AustraliaMap.o $(OBJDIR)/ChileMap.o $(OBJDIR)/factoryFlag.o $(OBJDIR)/factoryMap.o $(OBJDIR)/ChileFactory.o $(OBJDIR)/AustraliaFactory.o $(OBJDIR)/FactoryCountry.o
-	$(CXX) $(CXXFLAGS) -o run $(OBJDIR)/main.o $(OBJDIR)/AustraliaFlag.o $(OBJDIR)/ChileFlag.o $(OBJDIR)/AustraliaMap.o $(OBJDIR)/ChileMap.o $(OBJDIR)/factoryFlag.o $(OBJDIR)/factoryMap.o $(OBJDIR)/ChileFactory.o $(OBJDIR)/AustraliaFactory.o $(OBJDIR)/FactoryCountry.o
+run: directories $(OBJDIR)/main.o $(OBJDIR)/ProductFlagAustralia.o $(OBJDIR)/ProductFlagChile.o $(OBJDIR)/ProductMapAustralia.o $(OBJDIR)/ProductMapChile.o $(OBJDIR)/ConcreteFactoryChile.o $(OBJDIR)/ConcreteFactoryAustralia.o
+	$(CXX) $(CXXFLAGS) -o run $(OBJDIR)/main.o $(OBJDIR)/ProductFlagAustralia.o $(OBJDIR)/ProductFlagChile.o $(OBJDIR)/ProductMapAustralia.o $(OBJDIR)/ProductMapChile.o $(OBJDIR)/ConcreteFactoryChile.o $(OBJDIR)/ConcreteFactoryAustralia.o
 
 directories:
 	mkdir -p $(OBJDIR)
 
-$(OBJDIR)/main.o: app/main.cpp
+$(OBJDIR)/main.o: main.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-$(OBJDIR)/%.o: abstract/%.cpp
+$(OBJDIR)/%.o: Factory/%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-$(OBJDIR)/%.o: f1/%.cpp
+$(OBJDIR)/%.o: ProductFlag/%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
-$(OBJDIR)/%.o: f2/%.cpp
+$(OBJDIR)/%.o: ProductMap/%.cpp
 	$(CXX) $(CXXFLAGS) -c -o $@ $<
 
 clean:

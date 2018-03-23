@@ -1,7 +1,7 @@
 #include <iostream>
-#include "ChileMap.hpp"
+#include "ProductMapChile.hpp"
 
-void ChileMap::show_map() {
+void ProductMapChile::show() {
 
     std::cout << "   /\\   " << std::endl;                
     std::cout << "   | \\  " << std::endl;               
@@ -21,4 +21,4 @@ void ChileMap::show_map() {
     std::cout << "   `\\|  " << std::endl;  
 }
 
-ChileMap::~ChileMap() {}
+ProductMapChile::~ProductMapChile() {}

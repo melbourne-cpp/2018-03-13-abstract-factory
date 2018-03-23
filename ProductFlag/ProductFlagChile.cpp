@@ -1,7 +1,7 @@
 #include <iostream>
-#include "ChileFlag.hpp"
+#include "ProductFlagChile.hpp"
 
-void ChileFlag::show_flag() {
+void ProductFlagChile::show() {
 	std::cout << "  ______________________  " << std::endl;
 	std::cout << " | __/\\__ ||||||||||||||| " << std::endl;
 	std::cout << " | \\    / ||||||||||||||| " << std::endl;
@@ -12,4 +12,4 @@ void ChileFlag::show_flag() {
 	std::cout << "  ~~~~~~~~~~~~~~~~~~~~~~  " << std::endl;
 }
 
-ChileFlag::~ChileFlag() {}
+ProductFlagChile::~ProductFlagChile() {}
